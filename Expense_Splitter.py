@@ -1,6 +1,3 @@
-import os
-import pprint as pp
-
 class Expense_Splitter():
 
     """
@@ -167,6 +164,7 @@ class Expense_Splitter():
                     print(expense)
                     csv_string = ','.join(expense)
                     f.write(f'{csv_string}\n')
+
 
 
 splitter = Expense_Splitter()
