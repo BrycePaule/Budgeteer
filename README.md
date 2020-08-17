@@ -1,2 +1,4 @@
 # Expense-Splitter
-Budgeting tool, takes expense list CSV from commbank and breaks into monthly chunks for ease of importing into Google Sheets
+Budgeting tool (personal use)
+
+Expense Splitter takes downloadable .csv inputs from your banking website, and sorts them monthly whilst categorising and tagging specified expenses as taxable.
