@@ -1,4 +1,4 @@
-# Expense-Splitter
+# Budgeteer
 Budgeting tool (personal use)
 
 Budgeteer takes downloadable .csv inputs from your banking website, sorts / categorises them monthly whilst automatically flagging taxable expenses.
