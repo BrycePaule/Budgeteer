@@ -1,7 +1,7 @@
 class Expense_Splitter():
 
     """
-    Given a CSV file of all expenses output from CommBank.
+    Given a CSV file of all expenses.
 
     Cleans up and returns monthly CSV files to be easily imported into
     personal budget google sheet.

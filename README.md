@@ -1,4 +1,5 @@
 # Expense-Splitter
 Budgeting tool (personal use)
 
-Expense Splitter takes downloadable .csv inputs from your banking website, and sorts them monthly whilst categorising and tagging specified expenses as taxable.
+Budgeteer takes downloadable .csv inputs from your banking website, sorts / categorises them monthly whilst automatically flagging taxable expenses.
+Then interfaced with your budgeting spreadsheet to automate and trivialise the hassle of budgeting, and tax time crunch.
