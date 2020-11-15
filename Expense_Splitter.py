@@ -82,11 +82,10 @@ class Expense_Splitter():
 
         expense_lists = []
         for expense in list_of_expense_strings:
-            expense = expense.strip()
-            expense = expense.replace('"', '')
-            transaction_date, value, description, account_total, category = expense.split(',')
+            expense = expense.strip().replace('"', '')
+            # transaction_date, value, description, account_total, category = expense.split(',')
 
-            expense_lists.append([transaction_date, value, description, account_total, category])
+            expense_lists.append(expense.split(','))
 
         return expense_lists
 
@@ -108,15 +107,13 @@ class Expense_Splitter():
         for (trans_date, value, desc, acc_total, category) in expenses:
 
             # Purchase date initialisation
-            purchase_date = ' ' * 10
-            if 'Value Date: ' in desc:
+            if 'Value Date:' in desc:
                 desc, purchase_date = desc.split('Value Date: ')
+            else:
+                purchase_date = ' ' * 10
 
             # Taxable initialisation
-            if category in self.taxable_categories:
-                taxable = 'x'
-            else:
-                taxable = ''
+            taxable = 'x' if category in self.taxable_categories else ''
 
             # Value cleanup
             if value[0] == '+':
@@ -153,9 +150,7 @@ class Expense_Splitter():
         """ Writes monthly expense lists to individual csv files """
 
         for month, expenses in self.expenses_by_month.items():
-
-            if not expenses:
-                continue
+            if not expenses: continue
 
             year = expenses[0][0][8:10]
 
@@ -169,3 +164,9 @@ class Expense_Splitter():
 
 splitter = Expense_Splitter()
 splitter.run()
+
+print()
+
+for month, items in splitter.expenses_by_month.items():
+    for item in items:
+        print(f'{month}: {item}')
