@@ -160,13 +160,12 @@ class Expense_Splitter():
                     csv_string = ','.join(expense)
                     f.write(f'{csv_string}\n')
 
+if __name__ == '__main__':
+    splitter = Expense_Splitter()
+    splitter.run()
 
+    print()
 
-splitter = Expense_Splitter()
-splitter.run()
-
-print()
-
-for month, items in splitter.expenses_by_month.items():
-    for item in items:
-        print(f'{month}: {item}')
+    for month, items in splitter.expenses_by_month.items():
+        for item in items:
+            print(f'{month}: {item}')
